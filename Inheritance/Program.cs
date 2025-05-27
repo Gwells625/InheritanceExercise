@@ -1,4 +1,5 @@
 ﻿using System;
+using System.ComponentModel.Design.Serialization;
 
 namespace Inheritance
 {
@@ -28,12 +29,40 @@ namespace Inheritance
              *  
              * Creatively display the class member values 
              */
+            
+            var myBird = new Bird();
+            myBird.WingColor = "Red";
+            myBird.CanFly = true;
+            myBird.WillMigrate = true;
+            myBird.BeakLength = 2;
+
 
             /*Create an object of your Reptile class
              *  give values to your members using the object of your Reptile class
-             *  
-             * Creatively display the class member values 
+             *
+             * Creatively display the class member values
              */
+
+            var lizard = new Reptile()
+            {
+                IsColdBlooded = true,
+                IsScaly = true,
+                Habitat = "Dessert",
+                CanGrowBackTail = true
+            };
+
+            var myAnimals = new Animals[] { myBird, lizard };
+
+            foreach (var animal in myAnimals)
+            {
+                Console.WriteLine($"Alive:{animal.IsAlive}");
+                Console.WriteLine($"Age:{animal.Age} years old");
+                Console.WriteLine($"It has {animal.NumberOfLegs} legs");
+                Console.WriteLine($"It lives by{animal.LandSeaAir}");
+                Console.WriteLine($"");
+            }
+            
+            
         }
     }
 }
