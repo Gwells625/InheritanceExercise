@@ -47,7 +47,7 @@ namespace Inheritance
             {
                 IsColdBlooded = true,
                 IsScaly = true,
-                Habitat = "Dessert",
+                Habitat = "Desert",
                 CanGrowBackTail = true
             };
 
